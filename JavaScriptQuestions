@@ -1,0 +1,183 @@
+// Very easy Q1
+function mintosec(x){
+  result = x*60;
+  console.log(result);
+
+}
+mintosec(prompt())
+
+// Very easy Q2
+let dividend=11;
+let divisor=2;
+if(dividend>divisor){
+  if((dividend%divisor)===0){
+    console.log(true);
+  }
+  else{
+    console.log(false);
+  }
+}
+
+
+// Easy Q1
+function charCount(letter,str) 
+{
+ var var_Count = 0;
+ for (var position = 0; position < str.length; position++) 
+ {
+    if (str.charAt(position) === letter) 
+      {
+      var_Count += 1;
+      }
+  }
+  return var_Count;
+}
+
+console.log(charCount("b","big fat bubble"));
+
+
+//Easy Q2
+function numSum(x) {
+  if(x>0 && x<=1000){
+
+  var sum = 0;
+  for (let i = 1; i <= x; i++) {
+    sum = sum + i;
+
+  }
+  return sum;
+}
+else{
+  console.log('Enter a number between 1 and 1000');
+}
+}
+console.log(numSum())
+
+// Easy Q3
+function replaceVowel(s) {
+  let values = {
+    a: "1",
+    e: "2",
+    i: "3",
+    o: "4",
+    u: "5",
+  };
+
+  for (let i = 0; i < s.length; i++) {
+    if (
+      s[i] == "a" ||
+      s[i] == "e" ||
+      s[i] == "i" ||
+      s[i] == "o" ||
+      s[i] == "u"
+    ) {
+      s = s.substring(0, i) + values[s[i]] + s.substring(i + 1);
+    }
+  }
+  console.log(s);
+}
+replaceVowel("karachi");
+replaceVowel("chembur");
+replaceVowel("khandbari");
+console.log("***************************************");
+
+//Medium Q1
+
+function reverseThisSubStr(str) {
+  return str.split("").reverse().join("");
+}
+function specialReverse(s, value) {
+  let array = s.split(" ");
+  for (let i = 0; i < array.length; i++) {
+    if (array[i][0] == value) {
+      array[i] = reverseThisSubStr(array[i]);
+    }
+  }
+  s = array.join(" ");
+  console.log(s);
+}
+specialReverse("word searches are super fun", "s");
+specialReverse("first man to walk on the moon", "m");
+specialReverse("peter piper picked pickled peppers", "p");
+console.log("***************************************");
+
+// Medium Q2
+
+function testJackpot(arr) {
+  let ans = true;
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i] != arr[i - 1]) {
+      ans = false;
+      break;
+    }
+  }
+  if (ans) console.log("true");
+  else console.log("false");
+}
+testJackpot(["@", "@", "@", "@"]);
+testJackpot(["abc", "abc", "abc", "abc"]);
+testJackpot(["SS", "SS", "SS", "SS"]);
+testJackpot(["&&", "&", "&&&", "&&&&"]);
+testJackpot(["SS", "SS", "SS", "Ss"]);
+console.log("***************************************");
+
+// Medium Q3
+
+function removeDups(array){
+ let newarr = []
+ for(let value of array) {
+  if (!isExist(newarr, value)) 
+  newarr.push(value)
+ }
+ console.log(newarr);
+}
+
+function isExist (arr, value){
+ for (let i of arr){
+  if (i == value) return true
+ }
+ return false
+}
+removeDups([1,0,1,0]);
+
+//Hard Q1
+
+function realtype(x){
+if(Array.isArray(x)===true){
+  console.log('array');
+  
+}
+else if(x===null){
+  console.log('null')
+}
+else{
+  console.log(typeof(x));
+}
+}
+realtype();
+
+// Hard Q2
+
+function numInStr(arr) {
+  let ans = [];
+  for (let i = 0; i < arr.length; i++) {
+    let is = false;
+    for (let j = 0; j < arr[i].length; j++) {
+      if (arr[i][j] == " ") {
+        continue;
+      }
+      if (isNaN(arr[i][j]) == false) {
+        is = true;
+        break;
+      }
+    }
+    if (is) {
+      ans.push(arr[i]);
+    }
+  }
+  console.log(ans);
+}
+numInStr(["1a", "a", "2b", "b"]);
+numInStr(["abc", "abc10"]);
+numInStr(["abc", "ab10c", "a10bc", "bcd"]);
+numInStr(["this is a test", "test1"]);
