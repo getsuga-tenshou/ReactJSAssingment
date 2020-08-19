@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa');
+*{
+  font-family: "Comfortaa";
+
+}
+  div p:nth-child(odd){
+    float:left;
+    font-size:20px;
+    font-weight: bold;
+    
+    padding:5px;
+  }
+  div p:nth-child(even){
+    float:right;
+    font-size:20px;
+    font-weight: bold;
+    
+  }
+  .anime-card{
+    margin:0%;
+  }
+  .x{
+    font-family: "Comfortaa";
+  font-size:30px;
+  font-weight: bold;
+  padding: 50px;
+  padding-right:0px;
+  color: red;
+}  
+
+body{
+  background: black;
+
+}
+.btn{
+  border:1.5px solid black;
+  font-weight: bold;
+  background-color: red;
+  color: white;
+  
+    margin:3px;
+}
+
+img{
+  margin-top: 10px;
+}
+.row h5{
+  color: white;
+}

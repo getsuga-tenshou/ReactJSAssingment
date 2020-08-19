@@ -1,0 +1,321 @@
+<!DOCTYPE>
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<title>AnimeRoom</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="stylesheet" type="text/css" href="stylesheet.css">
+	<script src="script.js"></script>
+
+</head>
+<body>
+
+	<div class="container">
+		<div class="row" style="height: 10%">
+			<div class="col-md-offset-4 col-sm-offset-4 col-xs-offset-4">
+				<span class=x>Anime Room</span>
+			</div>
+		</div>
+		<div class="row">
+			<div  class="col-md-2col-sm-2 col-xs-2"></div>
+			<div class="col-md-10 col-sm-10 col-xs-10">
+				<span style="margin-left:10px;margin-right: 10px">
+					<button onclick="showCat(this)" anime-type="All" class="btn btn-default">ALL</button>
+				</span>
+				<span style="margin-left:10px; margin-right: 10px">
+					<button onclick="showCat(this)" anime-type="thriller" class="btn btn-default">THRILLER</button>
+				</span>
+				<span style="margin-left: 10px; margin-right: 10px">
+					<button onclick="showCat(this)" anime-type="action" class="btn btn-default">ACTION</button>
+				</span>
+				<span style="margin-left: 10px; margin-right: 10px">
+					<button onclick="showCat(this)" anime-type="comedy" class="btn btn-default">COMEDY</button>
+				</span>
+				<span style="margin-left: 10px; margin-right: 10px">
+					<button onclick="showCat(this)" anime-type="sports" class="btn btn-default">SPORTS</button>
+				</span>
+				<span style="margin-right: 10px; margin-right: 10px">
+					<button onclick="showCat(this)" anime-type="romance" class="btn btn-default">ROMANCE</button>
+				</span>
+			</div>
+			<div class="col-md-3 col-sm-3 col-xs-3"></div>
+		</div>
+		<br>
+		<div class="row" style="margin-left: 250px;">
+			<div class="input-group col-md- col-sm-7 col-xs-7">
+				<span class="input-group-addon">
+				<i class="glyphicon glyphicon-search"></i>
+				</span>
+				<input type="search" id="filter" class="form-control" onkeyup="filterstr()" name=search placeholder="What would you like to watch">
+		</div>
+		<div class="col-md-3 col-sm-3 col-xs-3"></div>
+		</div>
+		<div class="row">
+			<div id="action" class="col-md-3 col-sm-3 col-xs-3 anime-card">
+				<div>
+					<img src="assets/mha.jpg" alt="rest" norepeat height="auto" width="100%">
+				</div>
+				<div style="padding-top: 10px" class="animedisc">
+					<h5>My Hero Academia</h5>
+					<h5>Action</h5>
+				</div>
+			</div>
+			<div id="action" class="col-md-3 col-sm-3 col-xs-3 anime-card">
+				<div>
+					<img src="assets/fullmetal.jpg" alt="rest" norepeat height="auto" width="100%">
+				</div>
+				<div style="padding-top: 10px" class="animedisc">
+					<h5>Fullmetal Alchemist</h5>
+					<h5>Action</h5>
+				</div>
+			</div>
+			<div id="action" class="col-md-3 col-sm-3 col-xs-3 anime-card">
+				<div>
+					<img src="assets/aot.jpeg" alt="rest" norepeat height="auto" width="100%">
+				</div>
+				<div style="padding-top: 10px" class="animedisc">
+					<h5>Attack on Titan</h5>
+					<h5>Action</h5>
+				</div>
+			</div>
+			<div id="thriller" class="col-md-3 col-sm-3 col-xs-3 anime-card">
+				<div>
+					<img src="assets/codegeass.jpg" alt="rest" norepeat height="auto" width="100%">
+				</div>
+				<div style="padding-top: 10px" class="animedisc">
+					<h5>Code Geass</h5>
+					<h5>Thriller</h5>
+				</div>
+			</div>
+			<div id="thriller" class="col-md-3 col-sm-3 col-xs-3 anime-card">
+				<div>
+					<img src="assets/deathnote.jpg" alt="rest" norepeat height="auto" width="100%">
+				</div>
+				<div style="padding-top: 10px" class="animedisc">
+					<h5>Death Note</h5>
+					<h5>Thriller</h5>
+				</div>
+			</div>
+			<div id="sports" class="col-md-3 col-sm-3 col-xs-3 anime-card">
+				<div>
+					<img src="assets/haikyuu.jpg" alt="rest" norepeat height="auto" width="100%">
+				</div>
+				<div style="padding-top: 10px" class="animedisc">
+					<h5>Haikyuu</h5>
+					<h5>Sports</h5>
+				</div>
+			</div>
+			<div id="sports" class="col-md-3 col-sm-3 col-xs-3 anime-card">
+				<div>
+					<img src="assets/ippo.jpg" alt="rest" norepeat height="auto" width="100%">
+				</div>
+				<div style="padding-top: 10px" class="animedisc">
+					<h5>Hajime No Ippo</h5>
+					<h5>Sports</h5>
+				</div>
+			</div>
+			<div id="sports" class="col-md-3 col-sm-3 col-xs-3 anime-card">
+				<div>
+					<img src="assets/kuroko.jpg" alt="rest" norepeat height="auto" width="100%">
+				</div>
+				<div style="padding-top: 10px" class="animedisc">
+					<h5>Kuroko No Basketball</h5>
+					<h5>Sports</h5>
+				</div>
+			</div>
+			<div id="comedy" class="col-md-3 col-sm-3 col-xs-3 anime-card">
+				<div>
+					<img src="assets/gintama.jpg" alt="rest" norepeat height="auto" width="100%">
+				</div>
+				<div style="padding-top: 10px" class="animedisc">
+					<h5>Gintama</h5>
+					<h5>Comedy</h5>
+				</div>
+			</div>
+			<div id="comedy" class="col-md-3 col-sm-3 col-xs-3 anime-card">
+				<div>
+					<img src="assets/saiki.jpg" alt="rest" norepeat height="auto" width="100%">
+				</div>
+				<div style="padding-top: 10px" class="animedisc">
+					<h5>Saiki</h5>
+					<h5>Comedy</h5>
+				</div>
+			</div>
+			<div id="thriller" class="col-md-3 col-sm-3 col-xs-3 anime-card">
+				<div>
+					<img src="assets/steins.jpg" alt="rest" norepeat height="auto" width="100%">
+				</div>
+				<div style="padding-top: 10px" class="animedisc">
+					<h5>Steins;Gate</h5>
+					<h5>Thriller</h5>
+				</div>
+			</div>
+			<div id="comedy" class="col-md-3 col-sm-3 col-xs-3 anime-card">
+				<div>
+					<img src="assets/grandblue.jpg" alt="rest" norepeat height="auto" width="100%">
+				</div>
+				<div style="padding-top: 10px" class="animedisc">
+					<h5>Grand Blue</h5>
+					<h5>Comedy</h5>
+				</div>
+			</div>
+			<div id="romance" class="col-md-3 col-sm-3 col-xs-3 anime-card">
+				<div>
+					<img src="assets/koe.jpg" alt="rest" norepeat height="auto" width="100%">
+				</div>
+				<div style="padding-top: 10px" class="animedisc">
+					<h5>Silent Voice</h5>
+					<h5>Romance</h5>
+				</div>
+			</div>
+			<div id="romance" class="col-md-3 col-sm-3 col-xs-3 anime-card">
+				<div>
+					<img src="assets/yourlie.jpg" alt="rest" norepeat height="auto" width="100%">
+				</div>
+				<div style="padding-top: 10px" class="animedisc">
+					<h5>Your Lie in April</h5>
+					<h5>Romance</h5>
+				</div>
+			</div>
+			<div id="romance" class="col-md-3 col-sm-3 col-xs-3 anime-card">
+				<div>
+					<img src="assets/yourname.jpg" alt="rest" norepeat height="auto" width="100%">
+				</div>
+				<div style="padding-top: 10px" class="animedisc">
+					<h5>Your Name</h5>
+					<h5>Romance</h5>
+				</div>
+			</div>
+			<div id="action" class="col-md-3 col-sm-3 col-xs-3 anime-card">
+				<div>
+					<img src="assets/dbz.png" alt="rest" norepeat height="auto" width="100%">
+				</div>
+				<div style="padding-top: 10px" class="animedisc">
+					<h5>Dragon Ball Z</h5>
+					<h5>Action</h5>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+
+					
+
+	
+
+	
+	<!-- <nav class="anime-genre">
+		<h1>Anime Room</h1>
+	</nav>
+	<div class="wrapper">
+		<img class="search-icon" src="assets/search.ico" />
+		<input type="text" class="search" placeholder="What Would You Like To Watch">
+	</div>
+	<div class="anime-group">
+		<button class="action">Action</button>
+		<button class="thriller">Thriller</button>
+		<button class="comedy">Comedy</button>
+		<button class="sports">Sports</button>
+	</div>
+	<section class=anime>
+		<div class="anime-card">
+			<div class="anime-image">
+				<img src="assets/mha.jpg" alt="My Hero Academia">
+			</div>
+			<div class="anime-info">
+				<ul class="anime-list"><li><h5>My Hero Academia</h5>
+				<h6>Action</h6></li></ul>
+			</div>
+			
+		</div>
+		<div class="anime-card">
+			<div class="anime-image">
+				<img src="assets/aot.jpeg" alt="Attack on titan">
+			</div>
+			<div class="anime-info">
+				<ul><li><h5>Attack On Titan</h5>
+				<h6>Action</h6></li></ul>
+			</div>
+			
+		</div>
+		<div class="anime-card">
+			<div class="anime-image">
+				<img src="assets/deathnote.jpg" alt="Death Note">
+			</div>
+			<div class="anime-info">
+				<ul><li><h5>Death Note</h5>
+				<h6>Thriller</h6></li></ul>
+			</div>
+			
+		</div>
+		<div class="anime-card">
+			<div class="anime-image">
+				<img src="assets/fullmetal.jpg" alt="Fullmetal Alchemist">
+			</div>
+			<div class="anime-info">
+				<ul><li><h5>Full-Metal Alchemist</h5>
+				<h6>Thriller</h6></li></ul>
+			</div>
+			
+		</div>
+		<div class="anime-card">
+			<div class="anime-image">
+				<img src="assets/haikyuu.jpg" alt="Haikyuu">
+			</div>
+			<div class="anime-info">
+				<ul><li><h5>Haikyuu</h5>
+				<h6>Sports</h6></li></ul>
+			</div>
+			
+		</div>
+		<div class="anime-card">
+			<div class="anime-image">
+				<img src="assets/kuroko.jpg" alt="Kuroko No BasketBall">
+			</div>
+			<div class="anime-info">
+				<ul><li><h5>Kuroko No BasketBall</h5>
+				<h6>Sports</h6></li></ul>
+			</div>
+			
+		</div>
+		<div class="anime-card">
+			<div class="anime-image">
+				<img src="assets/ippo.jpg" alt="Hajime no Ippo">
+			</div>
+			<div class="anime-info">
+				<ul><li><h5>Hajime no Ippo</h5>
+				<h6>Sports</h6></li></ul>
+			</div>
+			
+		</div>
+		<div class="anime-card">
+			<div class="anime-image">
+				<img src="assets/gintama.jpg" alt="Gintama">
+			</div>
+			<div class="anime-info">
+				<ul><li><h5>Gintama</h5>
+				<h6>Comedy</h6></li></ul>
+			</div>
+			
+		</div>
+		<div class="anime-card">
+			<div class="anime-image">
+				<img src="assets/codegeass.jpg" alt="Code Geass">
+			</div>
+			<div class="anime-info">
+				<ul><li><h5>Code Geass</h5>
+				<h6>Thriller</h6></li></ul>
+			</div>
+			
+		</div>
+	</section>
+ -->
+
+</body>
+</html>
